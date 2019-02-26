@@ -1,8 +1,8 @@
 ---
-title: Component-Based
+title: భాగముల-బేస్డ్
 order: 1
 ---
 
-Build encapsulated components that manage their own state, then compose them to make complex UIs.
+వారి స్వంత రాష్ట్రాన్ని నిర్వహించే కప్పబడ్డ భాగాలను రూపొందించండి, తరువాత సంక్లిష్ట UI లను రూపొందించడానికి వాటిని రూపొందించండి.
 
-Since component logic is written in JavaScript instead of templates, you can easily pass rich data through your app and keep state out of the DOM.
+అంశాల తర్కం జావాస్క్రిప్ట్ లో బదులుగా జావాస్క్రిప్ట్ లో రాసినందున, మీరు మీ అనువర్తనం ద్వారా రిచ్ డాటాను సులువుగా పంపవచ్చు మరియు DOM నుండి బయటకు రాకుండా చేయవచ్చు.

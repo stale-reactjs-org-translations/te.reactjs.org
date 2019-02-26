@@ -1,8 +1,8 @@
 ---
-title: Declarative
+title: బద్ధంగా
 order: 0
 ---
 
-React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes.
+ఇంటరాక్టివ్ UI లను సృష్టించడానికి రియక్తత అది నొప్పిలేకుండా చేస్తుంది. మీ అప్లికేషన్ లో ప్రతి రాష్ట్రం కోసం సాధారణ వీక్షణలు రూపకల్పన మరియు మీ డేటా మారినప్పుడు చర్యలు సమర్ధవంతంగా సరిగ్గా అప్డేట్ మరియు సరైన అంశాలను అందించేవి.
 
-Declarative views make your code more predictable and easier to debug.
+డిక్లరేషన్ వీక్షణలు మీ కోడ్ మరింత ఊహాజనిత మరియు డీబగ్ చేయడానికి సులభంగా చేస్తాయి.
