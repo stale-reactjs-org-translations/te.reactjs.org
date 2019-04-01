@@ -19,7 +19,7 @@ class MarkdownEditor extends React.Component {
       <div className="MarkdownEditor">
         <h3>నివేశం</h3>
         <label htmlFor="markdown-content">
-          కొన్ని మార్కడను నమోదు చేయండి
+          కొన్ని మార్క్ డౌన్ నమోదు చేయండి
         </label>
         <textarea
           id="markdown-content"
