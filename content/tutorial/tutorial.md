@@ -1,6 +1,6 @@
 ---
 id: tutorial
-title: "Tutorial: Intro to React"
+title: "పాఠము: రియాక్టుకు పరిచయము"
 layout: tutorial
 sectionid: tutorial
 permalink: tutorial/tutorial.html
@@ -12,26 +12,26 @@ redirect_from:
   - "docs/tutorial-zh-CN.html"
 ---
 
-This tutorial doesn't assume any existing React knowledge.
+ఈ పాఠములో మీకు రియాక్ట్ తెలుసు  అని మేము అనుకోవడం లేదు.
 
-## Before We Start the Tutorial {#before-we-start-the-tutorial}
+## పాఠం మొదలు పెట్టె ముందు {#before-we-start-the-tutorial}
 
-We will build a small game during this tutorial. **You might be tempted to skip it because you're not building games -- but give it a chance.** The techniques you'll learn in the tutorial are fundamental to building any React apps, and mastering it will give you a deep understanding of React.
+ఇందులో మనము ఒక చిన్ని ఆటని చేద్దాం, సరేనా. **మీరేంటి ఆటలేంటి అని పక్కకు నెట్టేద్దాం అనుకుంటున్నారా  -- ఒకసారి ఆగండి.** రియాక్టులో మీరు అద్భుతమైన యాప్స్ కనిపెట్టడానికి ఈ పాఠంలో మీరు నేర్చుకొనే మెళకువలు ఎంతో అవసరం, వీటిని సాధన చేస్తే మీకు రియాక్టులో ఎదురే లేదు.
 
->Tip
+>సలహా
 >
->This tutorial is designed for people who prefer to **learn by doing**. If you prefer learning concepts from the ground up, check out our [step-by-step guide](/docs/hello-world.html). You might find this tutorial and the guide complementary to each other.
+>**చదువుతూ చేద్దాం** అనుకుని బయలుదేరిన వారికి ఈ పాఠం సరిగ్గా సరిపోతుంది. ఒకవేళ మీరు మొదటి నుండి విషయాలన్నీ ఒక్కొక్కటిగా నేర్చుకోవాలి అనుకుంటే, మా [అంచెలంచెల గైడ్](/docs/hello-world.html)ను చుడండి. ఈ పాఠం, ఆ గైడ్ ఒక దానికి ఒకటి ధీటుగా ఉంటాయి.
 
-The tutorial is divided into several sections:
+ఈ పాఠం క్రింది విధంగా విభజించ బడినది:
 
-* [Setup for the Tutorial](#setup-for-the-tutorial) will give you **a starting point** to follow the tutorial.
-* [Overview](#overview) will teach you **the fundamentals** of React: components, props, and state.
-* [Completing the Game](#completing-the-game) will teach you **the most common techniques** in React development.
-* [Adding Time Travel](#adding-time-travel) will give you **a deeper insight** into the unique strengths of React.
+* [పాఠం కోసం సెటప్](#setup-for-the-tutorial) పాఠంలో చెప్పిన విషయాలని తెలుసుకొనే క్రమంలో ఒక **పునాది రాయి**.
+* [వృత్తాన్తం](#overview) రియాక్టు యొక్క **మూల సిద్ధాంతాలు** నేర్పుతుంది: కంపోనెంట్స్, ప్రాప్స్, మరియు స్టేట్.
+* [ఆటని ముగించుట](#completing-the-game) రియాక్ట్ కోడింగులో **బాగా వాడబడే మెళకువలను** నేర్పుతుంది.
+* [సమయంలో ప్రయాణాన్ని జోడించుట](#adding-time-travel) రియాక్టు యొక్క అపూర్వమైన బలాలను గురించి **లోతైన అవగాహన** గురించి నేర్పుతుంది.
 
-You don't have to complete all of the sections at once to get the value out of this tutorial. Try to get as far as you can -- even if it's one or two sections.
+ఈ విభాగాలన్నీ పని కట్టుకుని ఒకేసారి నేర్చేసుకోవలసిన అవసరం ఏమి లేదు. ఎంత వీలైతే అంతే నేర్చుకోండి -- అది ఒకటి లేక రెండు విభాగాలు అయినా ఫర్వాలేదు.
 
-### What Are We Building? {#what-are-we-building}
+### అసలు మనము ఏమి తయారు చేస్తున్నాము అంటే? {#what-are-we-building}
 
 In this tutorial, we'll show how to build an interactive tic-tac-toe game with React.
 
@@ -78,7 +78,7 @@ This setup requires more work but allows you to complete the tutorial using an e
 npx create-react-app my-app
 ```
 
-3. Delete all files in the `src/` folder of the new project 
+3. Delete all files in the `src/` folder of the new project
 
 > Note:
 >
