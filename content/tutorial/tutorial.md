@@ -228,8 +228,9 @@ class Square extends React.Component {
 
 ### కంపోనెంట్ను ఇంటరాక్టివ్ గా చేయుట {#making-an-interactive-component}
 
-Let's fill the Square component with an "X" when we click it.
-First, change the button tag that is returned from the Square component's `render()` function to this:
+ఇప్పుడు మనము ఈ Square కంపోనెంటు క్లిక్ చేసిన ప్రతి సారీ "X" ను అందులో నింపుదాము.
+
+ముందుగా, Square కంపోనెంటు యొక్క `render()` ఫంక్షన్లో బటన్ టాగ్ను ఈ క్రింది విధంగా మారుద్దాము:
 
 ```javascript{4}
 class Square extends React.Component {
@@ -243,11 +244,11 @@ class Square extends React.Component {
 }
 ```
 
-If you click on a Square now, you should see an alert in your browser.
+ఇప్పుడు Square మీద ఒత్తితే, మీరు మీ బ్రౌజరులో ఒక అలర్ట్ చూస్తారు.
 
->Note
+>సూచన
 >
->To save typing and avoid the [confusing behavior of `this`](https://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/), we will use the [arrow function syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) for event handlers here and further below:
+>మీరు ఎక్కువగా టైపు  చేయకుండా,మరియు [`this` యొక్క గందరగోళాన్ని](https://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/) నివారించేందుకు, మనము [యారో ఫంక్షన్ సింటాక్స్](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) వాడి ఇక్కడ మరియు ముందు ముందు కూడా ఈవెంట్ హ్యాండ్లెర్స్ వ్రాయబోతున్నాము:
 >
 >```javascript{4}
 >class Square extends React.Component {
