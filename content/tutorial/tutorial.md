@@ -33,76 +33,76 @@ redirect_from:
 
 ### అసలు మనము ఏమి తయారు చేస్తున్నాము అంటే? {#what-are-we-building}
 
-In this tutorial, we'll show how to build an interactive tic-tac-toe game with React.
+ఈ పాఠంలో, ఒక అద్భుతమైన tic-tac-toe ఆటను రియాక్టులో చేద్దాం.
 
-You can see what we'll be building here: **[Final Result](https://codepen.io/gaearon/pen/gWWZgR?editors=0010)**. If the code doesn't make sense to you, or if you are unfamiliar with the code's syntax, don't worry! The goal of this tutorial is to help you understand React and its syntax.
+మనం ఏమి తయారు చేయబోతున్నామో దాన్ని ఇక్కడ ముందే చూడొచ్చు: **[ఫలితం](https://codepen.io/gaearon/pen/gWWZgR?editors=0010)**. మీరు చూస్తున్న కోడ్ మీకు అర్ధం కావట్లేదా ఇంకా, ఆ సింటాక్స్ కొంచెం విచిత్రంగా ఉందా, భయపడకండి! ఈ పాఠం మీరు రియాక్ట్ సింటాక్స్ అలవాటు చేసుకోడానికి సహాయం చేస్తుంది.
 
-We recommend that you check out the tic-tac-toe game before continuing with the tutorial. One of the features that you'll notice is that there is a numbered list to the right of the game's board. This list gives you a history of all of the moves that have occurred in the game, and is updated as the game progresses.
+మా  సలహా ఏంటంటే, ఒకసారి tic-tac-toe ఆట ఎలా ఆడతారో తెలుసుకోండి. మీరు గమనిస్తే, ఆ ఆటలో కుడివైపు ఒక పట్టిక ఉంది. ఆ పట్టిక మనము ఇదివరకు ఏమేమి ఎత్తులు వేశామో చూపిస్తోంది, అది మనం వేసే ప్రతి ఎత్తుకు నవీకరించ బడుతుంది.
 
-You can close the tic-tac-toe game once you're familiar with it. We'll be starting from a simpler template in this tutorial. Our next step is to set you up so that you can start building the game.
+మీకు ఒకసారి అర్ధం అయ్యాక ఆ tic-tac-game గురించి వదిలేయండి. ఒక సుళువైన టెంప్లేట్తో ఈ పాఠాన్ని మనం ప్రారంభిద్దాం. తదుపరి అంశంలో మీరు ఈ ఆట తయారీని ప్రారంభించేందుకు కావలిసిన సామగ్రి గురించి తెలుసుకుంటారు.
 
-### Prerequisites {#prerequisites}
+### ముందుగా కావలసినవి {#prerequisites}
 
-We'll assume that you have some familiarity with HTML and JavaScript, but you should be able to follow along even if you're coming from a different programming language. We'll also assume that you're familiar with programming concepts like functions, objects, arrays, and to a lesser extent, classes.
+మీకు HTML మరియు JavaScript ఇదివరకే తెలుసునని మేము భావిస్తాము, అయితే మీరు వేరే భాషా పరివారం నుండి వచ్చినవారు అయినా సరే ఈ పాఠాన్ని ఇబ్బంది లేకుండా అర్ధం చేసుకోవచ్చు. ఇంకో విషయం, మీకు ఫంక్షన్స్, ఆబ్జెక్ట్స్, ఆరేయ్స్, లాంటి అంశాల గురించి తెలుసని అనుకుంటున్నాం, కాస్త క్లాసెస్ గురించి కూడా.
 
-If you need to review JavaScript, we recommend reading [this guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript). Note that we're also using some features from ES6 -- a recent version of JavaScript. In this tutorial, we're using [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions), [classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes), [`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let), and [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) statements. You can use the [Babel REPL](babel://es5-syntax-example) to check what ES6 code compiles to.
+JavaScript గురించి నేర్చుకోవాలా, [ఈ గైడ్](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript) చుడండి. గమనించాల్సింది ఏమిటంటే మేము ES6 అనే ఆధునిక పద్ధతులు కూడా కొన్ని ఉపయోగిస్తున్నాము. ప్రత్యేకంగా మేము [యారో ఫంక్షన్స్](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions), [క్లాసెస్](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes), [`లెట్`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let), and [`కాన్స్ట్`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) వగైరాలు వాడాము. కుతూహలం ఉంటె [బాబెల్ REPL](babel://es5-syntax-example) వాడి ఈ ES6 ఏ విధంగా కంపైల్ అవుతుందో తెలుసుకోండి.
 
-## Setup for the Tutorial {#setup-for-the-tutorial}
+## పాఠం కోసం సెటప్ {#setup-for-the-tutorial}
 
-There are two ways to complete this tutorial: you can either write the code in your browser, or you can set up a local development environment on your computer.
+ఈ పాఠాన్ని పూర్తి చేయడానికి మీకు రెండు మార్గాలు ఉన్నాయి: మీరు మీ బ్రౌజర్లో కోడ్ వ్రాయవచ్చు లేదా మీరు మీ కంప్యూటర్లో ఒక లోకల్ డెవలప్మెంట్ పర్యావరణాన్ని సెటప్ చేయవచ్చు.
 
-### Setup Option 1: Write Code in the Browser {#setup-option-1-write-code-in-the-browser}
+### సెటప్ ఎంపిక 1: బ్రౌజర్ లోనే నేర్చుకోండి {#setup-option-1-write-code-in-the-browser}
 
-This is the quickest way to get started!
+ఇది ప్రారంభించడానికి త్వరిత మార్గం!
 
-First, open this **[Starter Code](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)** in a new tab. The new tab should display an empty tic-tac-toe game board and React code. We will be editing the React code in this tutorial.
+ముందుగా, ఈ ** [స్టార్టర్ కోడ్] (https://codepen.io/gaearon/pen/oWWQNa?editors=0010) **ను క్రొత్త ట్యాబ్లో తెరవండి. కొత్త ట్యాబ్ ఖాళీ tic-tac-toe ఆట బోర్డ్ను మరియు రియాక్ట్ కోడ్ను చూపిస్తుంది. మనము ఈ పాఠంలో రియాక్ట్ కోడ్ను ఎడిట్ చేసి నేర్చుకుందాము.
 
-You can now skip the second setup option, and go to the [Overview](#overview) section to get an overview of React.
+మీరు ఇప్పటికి ఈ క్రింది రెండవ సెటప్ ఐచ్చికను దాటేయొచ్చు మరియు రియాక్ట్ యొక్క సారాంశం గురించి తెలిపే [పర్యావలోకనం] (#overview) విభాగానికి వెళ్లవచ్చు.
 
-### Setup Option 2: Local Development Environment {#setup-option-2-local-development-environment}
+### సెటప్ ఎంపిక 2: లోకల్ డెవలప్మెంట్ పర్యావరణం {#setup-option-2-local-development-environment}
 
-This is completely optional and not required for this tutorial!
+ఈ పాఠానికి సంబంధించినంత వరకు, ఇది పూర్తిగా ఐచ్ఛికం, అంటే కచ్చితంగా అవసరం లేదు!
 
 <br>
 
 <details>
 
-<summary><b>Optional: Instructions for following along locally using your preferred text editor</b></summary>
+<summary><b>ఐచ్ఛికం: మీ ఇష్టమైన ఎడిటర్ను ఉపయోగించి నేర్చుకునేందుకు స్థానికంగా అనుసరించ వలసిన సూచనలు</b></summary>
 
-This setup requires more work but allows you to complete the tutorial using an editor of your choice. Here are the steps to follow:
+ఈ సెటప్కి కొంత పని అవసరం కానీ దీనివల్ల మీకు నచ్చిన ఎడిటర్లో మీరు ఈ పాఠాన్ని నేర్చుకోవచ్చు. ఈ క్రింది సూచనలను అనుసరించండి:
 
-1. Make sure you have a recent version of [Node.js](https://nodejs.org/en/) installed.
-2. Follow the [installation instructions for Create React App](/docs/create-a-new-react-app.html#create-react-app) to make a new project.
+1. మీదగ్గర [Node.js](https://nodejs.org/en/) యొక్క అత్యంత నవీనమైన వెర్షన్ ఇంస్టాల్ అయి ఉండాలి.
+2. [Create React App యొక్క ఇన్స్టలేషన్ సూచనలు](/docs/create-a-new-react-app.html#create-react-app) అనుసరించి కొత్త ప్రాజెక్ట్ తయారు చేయండి.
 
 ```bash
 npx create-react-app my-app
 ```
 
-3. Delete all files in the `src/` folder of the new project
+3. కొత్తగా ఏర్పడిన ప్రాజెక్టులో `src/` లో ఉన్న అన్ని ఫైళ్లను పీకేయండి
 
 > Note:
 >
->**Don't delete the entire `src` folder, just the original source files inside it.** We'll replace the default source files with examples for this project in the next step.
+>** గమనించండి `src` ఫోల్డర్ మొత్తాన్ని పీకేయకుండా, కేవలం అందులో ఉన్న ఫైళ్లను మాత్రమే తొలగించండి.** ఆ ఫైళ్ల బదులుగా మనం నేర్చుకునే కొద్దీ కొత్త ఫైళ్లను మనం తయారు చేసుకుంటాము.
 
 ```bash
 cd my-app
 cd src
 
-# If you're using a Mac or Linux:
+# మీరు Mac లేదా Linux వాడుతున్నట్టు అయితే:
 rm -f *
 
-# Or, if you're on Windows:
+# లేకపోతే, మీరు Windows వాడితే:
 del *
 
-# Then, switch back to the project folder
+# తర్వాతా, మీ ప్రాజెక్ట్ ఫోల్డర్ దగ్గరికి వెళ్ళడానికి:
 cd ..
 ```
 
-4. Add a file named `index.css` in the `src/` folder with [this CSS code](https://codepen.io/gaearon/pen/oWWQNa?editors=0100).
+4. `index.css` అనే ఫైలును `src/` అనే ఫోల్డరులో పెట్టి [ఈ CSS కోడ్ను](https://codepen.io/gaearon/pen/oWWQNa?editors=0100) నింపండి.
 
-5. Add a file named `index.js` in the `src/` folder with [this JS code](https://codepen.io/gaearon/pen/oWWQNa?editors=0010).
+5. `index.js` అనే ఫైలును `src/`లో పెట్టి [ఈ JS కోడ్ను](https://codepen.io/gaearon/pen/oWWQNa?editors=0010) నింపండి.
 
-6. Add these three lines to the top of `index.js` in the `src/` folder:
+6. ఈ క్రింది మూడు లైన్లను `src/` ఫోల్డరులో ఉన్న `index.js` ఫైలులో మొదట్లో పెట్టండి:
 
 ```js
 import React from 'react';
@@ -110,25 +110,25 @@ import ReactDOM from 'react-dom';
 import './index.css';
 ```
 
-Now if you run `npm start` in the project folder and open `http://localhost:3000` in the browser, you should see an empty tic-tac-toe field.
+ఇప్పుడు మీరు టెర్మినల్లో `npm start` కొట్టి `http://localhost:3000`ను మీ బ్రౌజర్లో కొడితే, ఒక ఖాళీ tic-tac-toe ఫీల్డ్ కనిపిస్తుంది.
 
-We recommend following [these instructions](https://babeljs.io/docs/editors/) to configure syntax highlighting for your editor.
+మా సలహా ఏమిటంటే [ఈ సూచనలను](https://babeljs.io/docs/editors/) వాడి మీ ఎడిటర్లో సింటాక్స్ హైలైటింగ్ చేసుకోండి.
 
 </details>
 
-### Help, I'm Stuck! {#help-im-stuck}
+### చిక్కుకుపోయా, సాయం చేయండి! {#help-im-stuck}
 
-If you get stuck, check out the [community support resources](/community/support.html). In particular, [Reactiflux Chat](https://discord.gg/0ZcbPKXt5bZjGY5n) is a great way to get help quickly. If you don't receive an answer, or if you remain stuck, please file an issue, and we'll help you out.
+మీకు ఏమి చేయాలో తెలియట్లేదా, [కమ్యూనిటీ మద్దతు వనరులు](/community/support.html) చుడండి. మరీ ముఖ్యంగా, [Reactiflux చాట్](https://discord.gg/0ZcbPKXt5bZjGY5n) అనేది త్వరగా సాయం పొందడానికి ఒక అద్భుతమైన మార్గం. అయినా సమాధానం దొరకకపోయినా లేక ఇంకా మీరు ఇబ్బంది పడుతున్నా, ఒక ఇష్యూ ఫైల్ చేయండి, మేము మిమ్మల్ని రక్షిస్తాము.
 
-## Overview {#overview}
+## పర్యావలోకనం {#overview}
 
-Now that you're set up, let's get an overview of React!
+మీరు సిద్ధం అయ్యారు గనుక, ఇప్పుడు మనం రియాక్ట్ యొక్క సమగ్ర రూపాన్ని తెలుసుకుందాము!
 
-### What Is React? {#what-is-react}
+### అసలు రియాక్ట్ అంటే ఏమిటి? {#what-is-react}
 
-React is a declarative, efficient, and flexible JavaScript library for building user interfaces. It lets you compose complex UIs from small and isolated pieces of code called "components".
+రియాక్ట్ అనేది యూజర్ ఇంటరుఫేసులు తయారు చేసేందుకు ఉపయోగపడే ఒక డిక్లరేటివ్ అయిన, సమర్థవంతమైన మరియు అనువైన JavaScript లైబ్రరీ. క్లిష్టమైన UIలను "కంపోనెంట్లు" అనే చిన్న చిన్న వివిక్త కోడు ముక్కలను వాడి కంపోజ్ చేస్తుంది.
 
-React has a few different kinds of components, but we'll start with `React.Component` subclasses:
+రియాక్టులో చాలా రకాలైన కంపోనెంట్లు ఉన్నాయి, ముందుగా `React.Component` సబ్ క్లాసుల గురించి తెలుసుకుందాము:
 
 ```javascript
 class ShoppingList extends React.Component {
@@ -146,14 +146,14 @@ class ShoppingList extends React.Component {
   }
 }
 
-// Example usage: <ShoppingList name="Mark" />
+// ఉదాహరణకి ఇలా వాడొచ్చు: <ShoppingList name="Mark" />
 ```
 
-We'll get to the funny XML-like tags soon. We use components to tell React what we want to see on the screen. When our data changes, React will efficiently update and re-render our components.
+ఈ సరదాయైన XML-లా కనిపించే టాగ్స్ గురించి త్వరలోనే తెలుసుకుంటాము. We use components to tell React what we want to see on the screen. When our data changes, React will efficiently update and re-render our components.
 
-Here, ShoppingList is a **React component class**, or **React component type**. A component takes in parameters, called `props` (short for "properties"), and returns a hierarchy of views to display via the `render` method.
+ఇక్కడ, ShoppingListని **రియాక్ట్ కంపోనెంట్ క్లాస్**, లేక **రియాక్ట్ కంపోనెంట్ టైపు** అంటారు. ఒక కంపోనెంట్ కొన్ని `props` ("ప్రాపర్టీస్" కి చిన్న రూపము) తీసుకుని, `render` మెథడ్ ద్వారా కొన్ని వ్యూస్ ని ఇస్తుంది.
 
-The `render` method returns a *description* of what you want to see on the screen. React takes the description and displays the result. In particular, `render` returns a **React element**, which is a lightweight description of what to render. Most React developers use a special syntax called "JSX" which makes these structures easier to write. The `<div />` syntax is transformed at build time to `React.createElement('div')`. The example above is equivalent to:
+ఆ `render` మెథడ్ అనేది మనకి కనిపించే విషయం అంతా మనకి ఇస్తుంది. రియాక్ట్ ఆ విషయాన్ని అంతా తీసుకుని మనకి చుపించాల్సింది చూపిస్తుంది. ముఖ్యంగా, `render` మనకి ఒక **రియాక్ట్ ఎలిమెంట్**ని ఇస్తుంది, ఇది రెండర్ చేయాల్సిన దానికి సంబంధించిన తత్సమాన విషయం అనవచ్చు. చాలా వరకు రియాక్ట్ డెవలపర్స్ "JSX" అనే సింటాక్స్ వాడతారు ఎందుకంటే దానివల్ల ఈ నిర్మాణాలు చేయడం కొంచం సులువుగా ఉంటుంది. బిల్డ్ టైములో ఈ `<div />` సింటాక్స్ కాస్తా `React.createElement('div')`లాగ రూపాంతరం చెందుతుంది. పైన చెప్పిన ఉదాహరణ ఇలా మారుతుంది:
 
 ```javascript
 return React.createElement('div', {className: 'shopping-list'},
@@ -162,35 +162,36 @@ return React.createElement('div', {className: 'shopping-list'},
 );
 ```
 
-[See full expanded version.](babel://tutorial-expanded-version)
+[పూర్తి వెర్షన్ చూడండి.](babel://tutorial-expanded-version)
 
-If you're curious, `createElement()` is described in more detail in the [API reference](/docs/react-api.html#createelement), but we won't be using it in this tutorial. Instead, we will keep using JSX.
+మీకు కుతూహలం ఉంటే, `createElement()` గురించి మరింత వివరంగా తెలుసుకోడానికి [API రిఫరెన్స్](/docs/react-api.html#createelement) చుడండి, ఇక్కడైతే ఇంతకన్నా ఎక్కువ ప్రస్తావించుకోము. దానికి బదులుగా, మనము JSX వాడదాము.
 
-JSX comes with the full power of JavaScript. You can put *any* JavaScript expressions within braces inside JSX. Each React element is a JavaScript object that you can store in a variable or pass around in your program.
+JSX అనేది JavaScript యొక్క పూర్తి శక్తిని పొందినది. మీరు *ఎటువంటి* JavaScript ఎక్స్ప్రెషన్ అయినా కర్లీ బ్రేసెస్ లో పెట్టొచ్చు. ప్రతీ రియాక్ట్ ఎలిమెంట్ అనేది ఒక JavaScript ఆబ్జెక్ట్ కాబట్టి, మనం దానిని ఒక వేరియబుల్లో పెట్టొచ్చు మరియు ఎక్కడికైనా పంపవచ్చు.
 
-The `ShoppingList` component above only renders built-in DOM components like `<div />` and `<li />`. But you can compose and render custom React components too. For example, we can now refer to the whole shopping list by writing `<ShoppingList />`. Each React component is encapsulated and can operate independently; this allows you to build complex UIs from simple components.
+ఈ `ShoppingList` కంపోనెంట్ కేవలం `<div />` మరియు `<li />` లనే రెండర్ చేస్తుంది. అయితే మీరు కస్టమ్ రియాక్ట్ కంపోనెంట్స్ కూడా రెండర్ చేసుకోవచ్చు. ఉదాహరణకు, మనం ఆ షాపింగ్ లిస్టు కంపోనెంటు మొత్తాన్ని `<ShoppingList />` అని పరిగణించ వచ్చు. ప్రతి రియాక్ట్ కంపోనెంటు దాని మటుకు అదే వ్యవహరిస్తోంది కనుక మీరు దానికి స్వతంత్రంగానే వాడుకోవచ్చు; దీని వాళ్ళ మీరు చాలా క్లిష్టమైన UIలను చాలా సాధారణ కంపోనెంట్లు వాడి చేయవచ్చు.
 
-## Inspecting the Starter Code {#inspecting-the-starter-code}
+## మన స్టార్టర్ కోడును ఒకసారి చుడండి {#inspecting-the-starter-code}
 
-If you're going to work on the tutorial **in your browser,** open this code in a new tab: **[Starter Code](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)**. If you're going to work on the tutorial **locally,** instead open `src/index.js` in your project folder (you have already touched this file during the [setup](#setup-option-2-local-development-environment)).
+మీరు ఈ పాఠాన్ని **బ్రౌజరులో** చేస్తుంటే కనుక, దీనిని కొత్త ట్యాబులో చుడండి: **[స్టార్టర్ కోడ్](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)**. అదే మీరు ఈ పాఠాన్ని **లోకలుగా** చూస్తుంటే గనుక, ఈసారి `src/index.js`ని మీ ప్రాజెక్టు ఫోల్డరులో తెరవండి (మీరు ఇదివరకే దీనిని తెరిచి ఉన్నారు, ఇక్కడ చుడండి: [సెటప్](#setup-option-2-local-development-environment)).
 
-This Starter Code is the base of what we're building. We've provided the CSS styling so that you only need to focus on learning React and programming the tic-tac-toe game.
+ఈ స్టార్టర్ కోడ్ వాడే మనము ఈ పాఠాన్ని నేర్చుకోబోతున్నాము. మీరు కేవలం రియాక్టు మీద దృష్టి నిలిపి ఈ tic-tac-toe ఆటను తయారు చేసేందుకు వీలుగా మేము కొంత CSS కోడ్ ముందుగానే ఇక్కడ ఇచ్చేసాము.
 
-By inspecting the code, you'll notice that we have three React components:
+ఈ కోడును తరచి చూస్తే, మన దగ్గర మూడు కంపోనెంట్లు ఉన్నాయని మీకు తెలుస్తుంది:
 
-* Square
+* Sqaure
 * Board
 * Game
 
-The Square component renders a single `<button>` and the Board renders 9 squares. The Game component renders a board with placeholder values which we'll modify later. There are currently no interactive components.
+ఈ Square కంపోనెంటు ఒకేఒక్క `<button>` ను రెండర్ చేస్తుంది ఇంకా ఈ Board సంగతికొస్తే 9 squareలు రెండర్ చేస్తుంది. ఇహ మన Game కంపోనెంట్ విషయానికొస్తే, అది ఒక boardను దాని యొక్క ప్లేసుహోల్డర్ వాల్యూలతో సహా రెండర్ చేసి, తరువాత మనం మార్చుకోడానికి అనువుగా ఇస్తుంది. ఇప్పటికి మన కంపోనెంట్లు ఒకదానితో ఒకటి ఇంకా ముచ్చటించుకోవట్లేదు.
 
-### Passing Data Through Props {#passing-data-through-props}
+### డాటాను ప్రాప్స్ ద్వారా పంపించుట {#passing-data-through-props}
 
-To get our feet wet, let's try passing some data from our Board component to our Square component.
+ఇప్పుడే సంగతి కాస్త రసపట్టులో పడింది, ఇప్పుడు మనం మన Board కంపోనెంటు నుండి ఈ Square కంపోనెంటుకు డేటా పంపించే వేళయింది.
 
-We strongly recommend typing code by hand as you're working through the tutorial and not using copy/paste. This will help you develop muscle memory and a stronger understanding.
+మేము బల్ల గుద్ది చెప్పే సంగతేంటంటే, బొత్తిగా కాపీ/పేస్టు కొట్టేకంటే మాతో పాటు కోడ్ను టైపు చేసినట్లు అయితే మీకు చాలా ఉపయోగకరంగా ఉంటుంది.
+దీనివల్ల మీకు ఈ విషయాలు త్వరగా మరియు దీర్ఘకాలికంగా గుర్తుండిపోతాయి (మజిల్ మెమొరీ అంటారుగా).
 
-In Board's `renderSquare` method, change the code to pass a prop called `value` to the Square:
+ఇప్పుడు మన Board యొక్క `renderSquare` మెథడ్లో, `value` అనే ప్రాపుని Squareకు పంపించే విధంగా మన కోడ్ను సవరించండి:
 
 ```js{3}
 class Board extends React.Component {
@@ -199,7 +200,7 @@ class Board extends React.Component {
   }
 ```
 
-Change Square's `render` method to show that value by replacing `{/* TODO */}` with `{this.props.value}`:
+తరువాత Square యొక్క `render` మెథడ్లో `{/* TODO */}`ను లేపేసి `{this.props.value}`ను జొప్పించండి:
 
 ```js{5}
 class Square extends React.Component {
@@ -213,19 +214,19 @@ class Square extends React.Component {
 }
 ```
 
-Before:
+అంతకుముందు:
 
 ![React Devtools](../images/tutorial/tictac-empty.png)
 
-After: You should see a number in each square in the rendered output.
+ఆ తరువాత: గమనిస్తే ఇప్పుడు ప్రతి చతురస్రంలో ఒక అంకె కనిపిస్తుంది.
 
 ![React Devtools](../images/tutorial/tictac-numbers.png)
 
-**[View the full code at this point](https://codepen.io/gaearon/pen/aWWQOG?editors=0010)**
+**[ఇప్పటిదాకా రాసిన మొత్తాన్ని ఇక్కడ చూడండి](https://codepen.io/gaearon/pen/aWWQOG?editors=0010)**
 
-Congratulations! You've just "passed a prop" from a parent Board component to a child Square component. Passing props is how information flows in React apps, from parents to children.
+శుభాకాంక్షలండోయ్! మీరు ఇప్పుడు Board కంపోనెంటు నుండి దాని చైల్డ్ కంపోనెంటు Sqaureకు "ప్రాపును పంపారోచ్". ఇలా ప్రాప్స్ ఒక తల్లి కంపోనెంటు నుండి ఒక పిల్ల కంపోనెంటుకు పంపుకోవడం ద్వారా మన డేటా లేదా ఇన్ఫర్మేషన్ ప్రవహిస్తుంది.
 
-### Making an Interactive Component {#making-an-interactive-component}
+### కంపోనెంట్ను ఇంటరాక్టివ్ గా చేయుట {#making-an-interactive-component}
 
 Let's fill the Square component with an "X" when we click it.
 First, change the button tag that is returned from the Square component's `render()` function to this:
