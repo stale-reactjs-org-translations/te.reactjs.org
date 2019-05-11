@@ -262,13 +262,13 @@ class Square extends React.Component {
 >}
 >```
 >
->Notice how with `onClick={() => alert('click')}`, we're passing *a function* as the `onClick` prop. React will only call this function after a click. Forgetting `() =>` and writing `onClick={alert('click')}` is a common mistake, and would fire the alert every time the component re-renders.
+>మీరు గమనిస్తే `onClick={() => alert('click')}`లో, మనం `onClick` ప్రాపులోకి  *ఒక ఫంక్షన్*ను పంపుతున్నాము. రియాక్ట్ క్లిక్ చేసినప్పుడు మాత్రమే ఈ ఫంక్షన్ ను అమలు పరుస్తుంది. ఒక్కోసారి `() =>` వ్రాయకుండా `onClick={alert('click')}` అని కొంతమంది తప్పుగా వ్రాస్తుంటారు,  ఈ విధంగా వ్రాస్తే, మన కంపోనెంటు రీ-రెండర్ అయినా ప్రతీసారీ అలెర్ట్ వస్తుంది.
 
-As a next step, we want the Square component to "remember" that it got clicked, and fill it with an "X" mark. To "remember" things, components use **state**.
+తదుపరి, Square కంపోనెంటు దాన్ని క్లిక్ చేశామని "గుర్తుపెట్టుకోవాలి", మరియు ఆ వెంటనే "X" మార్కును నింపాలి. ఇలా "గుర్తుపెట్టుకోవాలి" అంటే, కంపోనెంట్లు **state**ను వాడుకుంటాయి.
 
-React components can have state by setting `this.state` in their constructors. `this.state` should be considered as private to a React component that it's defined in. Let's store the current value of the Square in `this.state`, and change it when the Square is clicked.
+రియాక్ట్ కంపోనెంట్లు వాటి వాటి కంస్ట్రక్టర్లలో `this.state` ద్వారా స్టేట్ను వాడుకుంటాయి. `this.state` అనేది రియాక్ట్ కంపోనెంటు యొక్క వ్యక్తిగతం అయినదని మనం గమనించాలి. ఇప్పుడు మనం మన Square యొక్క వాల్యుని `this.state`లో పెట్టి, మనం Squareను ఒత్తిన ప్రతిసారీ మారుద్దాము.
 
-First, we'll add a constructor to the class to initialize the state:
+ముందుగా క్లాసుకు కంస్ట్రక్టరు ఒకటి జత చేసి స్టేటును ప్రారంభిద్దాము:
 
 ```javascript{2-7}
 class Square extends React.Component {
@@ -289,17 +289,17 @@ class Square extends React.Component {
 }
 ```
 
->Note
+>సూచన
 >
->In [JavaScript classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes), you need to always call `super` when defining the constructor of a subclass. All React component classes that have a `constructor` should start it with a `super(props)` call.
+>[జావాస్క్రిప్ట్ క్లాసులలో](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes), మీరు ఒక సబ్క్లాసు డిఫైన్ చేసిన ప్రతిసారీ `super`ను కంస్ట్రక్టరులో తప్పకుండా కాల్ చేయాలి. రియాక్ట్ క్లాస్ కంపోనెంట్లు అన్నింటిలో `constructor`అనేది `super(props)`తో ప్రారంభం కావాలి.
 
-Now we'll change the Square's `render` method to display the current state's value when clicked:
+ఇప్పుడు మన Squareను ఒత్తిన ప్రతిసారి దాని యొక్క `render` మెథడ్లో మారిన స్టేట్ యొక్క వాల్యూ చూపించేలా మారుద్దాము:
 
-* Replace `this.props.value` with `this.state.value` inside the `<button>` tag.
-* Replace the `onClick={...}` event handler with `onClick={() => this.setState({value: 'X'})}`.
-* Put the `className` and `onClick` props on separate lines for better readability.
+* `<button>`ట్యాగులో ఉన్న `this.props.value`ను `this.state.value`గా మార్చండి.
+* `onClick={...}` ఈవెంట్ హాండ్లర్ను `onClick={() => this.setState({value: 'X'})}` గా మార్చండి.
+* `className` ఇంకా `onClick` ప్రాపులను చదవడానికి వీలుగా వేర్వేరు లైన్లలో పెట్టండి.
 
-After these changes, the `<button>` tag that is returned by the Square's `render` method looks like this:
+ఇవి మార్చిన తరువాత, Square యొక్క `render` మెథడ్ మనకు రిటర్న్ చేసే `<button>` ఈ క్రింది విధంగా కనిపిస్తుంది:
 
 ```javascript{12-13,15}
 class Square extends React.Component {
@@ -323,44 +323,44 @@ class Square extends React.Component {
 }
 ```
 
-By calling `this.setState` from an `onClick` handler in the Square's `render` method, we tell React to re-render that Square whenever its `<button>` is clicked. After the update, the Square's `this.state.value` will be `'X'`, so we'll see the `X` on the game board. If you click on any Square, an `X` should show up.
+ఇలా `this.setState`ను Square యొక్క `render` మెథడ్లో ఉన్న  `onClick` హ్యాండ్లర్ నుండి కాల్ చేయడం ద్వారా `<button>` ఒత్తబడిన ప్రతి సారీ Squareను రీ-రెండర్ చేయమని రియాక్టుకు మనం చెప్తున్నాము. ఆ తరువాత, Square యొక్క `this.state.value` కాస్త `'X'`గా మారి మనకి గేమ్ బోర్డు మీద `X` కనిపిస్తుంది. ఇలా మీరు ఏ Square మీద ఒత్తినా `X` కనిపిస్తుంది.
 
-When you call `setState` in a component, React automatically updates the child components inside of it too.
+మీరు ఒక కంపోనెంటులో `setState`ను కాల్ చేసిన ప్రతి సారీ రియాక్ట్ వెంటనే ఆ కంపోనెంటులో ఉన్న అన్ని చైల్డ్ కంపోనెంట్లను నవీకరణం చేస్తుంది.
 
-**[View the full code at this point](https://codepen.io/gaearon/pen/VbbVLg?editors=0010)**
+**[ఇప్పటివరకు వ్రాసిన కోడ్ను ఇక్కడ చుడండి](https://codepen.io/gaearon/pen/VbbVLg?editors=0010)**
 
-### Developer Tools {#developer-tools}
+### డెవలపర్ టూల్స్ {#developer-tools}
 
-The React Devtools extension for [Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) and [Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/) lets you inspect a React component tree with your browser's developer tools.
+[క్రోమ్](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) మరియు [ఫైరుఫాక్సు](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)లలో మీరు వాడగలిగే React Devtools ద్వారా మీ బ్రౌజర్ యొక్క డెవలపర్ టూల్సులో మీ రియాక్ట్ కంపోనెంట్ ట్రీని ఇంస్పెక్టు చేయవచ్చు.
 
 <img src="../images/tutorial/devtools.png" alt="React Devtools" style="max-width: 100%">
 
-The React DevTools let you check the props and the state of your React components.
+ఈ రియాక్ట్ డెవ్ టూల్స్ వాడి మీ రియాక్ట్ కంపోనెంటు యొక్క ప్రాప్స్ మరియు స్టేట్ చూసుకోవచ్చు.
 
-After installing React DevTools, you can right-click on any element on the page, click "Inspect" to open the developer tools, and the React tab will appear as the last tab to the right.
+ఈ రియాక్ట్ డెవ్ టూల్స్ మీ బ్రౌజరులో దిగుమతి చేసుకున్నాక, మీ పేజీలో ఉన్న ఏ ఎలిమెంటును అయినా రైట్ క్లిక్ చేసి "Inspect" ఒత్తి, డెవలపర్ టూల్స్ తెరచి, అందులో ఉన్న రియాక్ట్ ట్యాబును చేరుకుంటే సరి.
 
-**However, note there are a few extra steps to get it working with CodePen:**
+**అయితే, ఇదే CodePenలో వాడుకోవాలి అంటే, మీరు కొన్ని అదనపు పనులు చేయవలసి ఉంటుంది:**
 
-1. Log in or register and confirm your email (required to prevent spam).
-2. Click the "Fork" button.
-3. Click "Change View" and then choose "Debug mode".
-4. In the new tab that opens, the devtools should now have a React tab.
+1. లాగిన్ కానీ రిజిస్టర్ కానీ అయ్యి మీ ఇమెయిల్ ను నిర్ధారించండి (స్పామ్ నిరోధనకు ఇది అవసరం).
+2. "Fork" అనే మీటను ఒత్తండి.
+3. తరువాత "Change View"ను ఒత్తి, అందులో "Debug mode"ను ఎంపిక చేసుకోండి.
+4. తద్వారా తెరవబడిన కొత్త ట్యాబులో డెవ్ టూల్సులో రియాక్ట్ ట్యాబు కనిపిస్తుంది.
 
-## Completing the Game {#completing-the-game}
+## ఆట తయారీని ముగించుట {#completing-the-game}
 
-We now have the basic building blocks for our tic-tac-toe game. To have a complete game, we now need to alternate placing "X"s and "O"s on the board, and we need a way to determine a winner.
+మనకి ఇప్పుడు tic-tac-toe ఆటకు సంబంధించిన ముడిసరుకు తయారయింది. ఆటను పూర్తి చేయడానికి మనం ఇంకా కొన్ని చేయాలి, మార్చి మార్చి "X"లను "O"లను బోర్డులో పెట్టగలగాలి, ఇంకా విజేతను నిర్ణయించగలగాలి.
 
-### Lifting State Up {#lifting-state-up}
+### స్టేట్ను పైకి ఎత్తుట {#lifting-state-up}
 
-Currently, each Square component maintains the game's state. To check for a winner, we'll maintain the value of each of the 9 squares in one location.
+ప్రస్తుతానికి, ప్రతి Square కంపోనెంటు కూడా ఈ ఆట యొక్క స్టేట్ను శాసిస్తున్నాయి. విజేత ఎవరన్నది తెలియాలి అంటే, ఈ తొమ్మిది Squareల స్టేటును మనం ఒక్క దగ్గరే ఉంచగలగాలి.
 
-We may think that Board should just ask each Square for the Square's state. Although this approach is possible in React, we discourage it because the code becomes difficult to understand, susceptible to bugs, and hard to refactor. Instead, the best approach is to store the game's state in the parent Board component instead of in each Square. The Board component can tell each Square what to display by passing a prop, [just like we did when we passed a number to each Square](#passing-data-through-props).
+ఏముందిలే మన Board గారు వెళ్లి ప్రతి Square యొక్క స్టేటును గురించి వాకబు చేస్తే సరిపోతుంది కదా అని మీరు అనుకోవచ్చు. అలా చేయడం రియాక్టులో కుదురుతుంది కానీ ఈ పద్ధతి వాళ్ళ మనం రాసిన కోడు మనకే సరిగ్గా అర్ధం కాకపోవచ్చు, చాలా బగ్స్ రావొచ్చు, అంత సులువుగా మార్పులు చేయలేము, కనుక మేము ఈ పద్ధతిని సమర్థించము. అలా కాకుండా, మనం ఆట యొక్క స్టేటును Square బదులు Board కంపోనెంటులో పెట్టినట్టు అయితే బాగుంటుంది కదా. మన Board గారు ఆయా Square కంపోనెంటుకు ఏమి చూపించాలో ప్రాపు ద్వారా పంపిస్తారు, [మనం ఇదివరకు ప్రతి Squareకు ఒక అంకె పంపించినట్టే](#passing-data-through-props).
 
-**To collect data from multiple children, or to have two child components communicate with each other, you need to declare the shared state in their parent component instead. The parent component can pass the state back down to the children by using props; this keeps the child components in sync with each other and with the parent component.**
+**చైల్డ్ కంపోనెంట్ల నుండి డాటా తీసుకోవాలన్నా, రెండు చైల్డ్ కంపోనెంట్లు ఒక దానితో ఒకటి ముచ్చటించుకోవాలి అన్నా, మీరు ఆ పంచుకున్న స్టేటును పేరెంట్ కంపోనెంటులో పెట్టుకోవాలి. ఆ పేరెంట్ గారు ఆయా స్టేటు ముక్కలను ఆ చైల్డ్ కంపోనెంట్లకు ప్రాప్స్ ద్వారా పంపి తద్వారా ఆ చైల్డ్ కంపోనెంట్లు మరియు ఆ పేరెంటు సింకులో ఉండేలా చేస్తుంది.**
 
-Lifting state into a parent component is common when React components are refactored -- let's take this opportunity to try it out.
+రియాక్ట్ కంపోనెంట్లు మార్చబడ్డ ప్రతిసారీ ఇలా స్టేటును పేరెంట్ మీదకి లిఫ్ట్ చేయడం అనేది చాలా తరచుగా జరుగుతుంది -- మనం కూడా ఈ అవకాశాన్ని వాడుకుని ఆ పని చేద్దామా.
 
-Add a constructor to the Board and set the Board's initial state to contain an array of 9 nulls corresponding to the 9 squares:
+మన Board కంపోనెంటులో ఒక కంస్ట్రక్టరును జత చేసి Board యొక్క ప్రారంభ స్టేటెను ఒక 9 nulls కలిగిన array గా 9 చతురస్రాలకు గుర్తుగా పెట్టండి:
 
 ```javascript{2-7}
 class Board extends React.Component {
@@ -376,7 +376,7 @@ class Board extends React.Component {
   }
 ```
 
-When we fill the board in later, the `this.state.squares` array will look something like this:
+మనము తరువాత మన బోర్డును నింపినప్పుడు `this.state.squares` అనే array ఈ క్రింది విధంగా కనిపిస్తుంది:
 
 ```javascript
 [
@@ -386,7 +386,7 @@ When we fill the board in later, the `this.state.squares` array will look someth
 ]
 ```
 
-The Board's `renderSquare` method currently looks like this:
+మన Board యొక్క `renderSquare` మెథడ్ ప్రస్తుతానికి ఇలా ఉంది:
 
 ```javascript
   renderSquare(i) {
