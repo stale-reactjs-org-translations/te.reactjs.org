@@ -21,7 +21,7 @@ class TodoApp extends React.Component {
             value={this.state.text}
           />
           <button>
-            చేర్చు #{this.state.items.length + 1}
+            కూడించు #{this.state.items.length + 1}
           </button>
         </form>
       </div>
