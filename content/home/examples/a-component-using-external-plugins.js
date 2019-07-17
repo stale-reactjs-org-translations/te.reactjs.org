@@ -26,7 +26,7 @@ class MarkdownEditor extends React.Component {
           onChange={this.handleChange}
           defaultValue={this.state.value}
         />
-        <h3>ఉత్పత్తి</h3>
+        <h3>ఫలితము</h3>
         <div
           className="content"
           dangerouslySetInnerHTML={this.getRawMarkup()}
