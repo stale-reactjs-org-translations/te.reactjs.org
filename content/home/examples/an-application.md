@@ -1,7 +1,7 @@
 ---
-title: An Application
+title: ఒక అప్లికేషన్
 order: 2
 domid: todos-example
 ---
 
-Using `props` and `state`, we can put together a small Todo application. This example uses `state` to track the current list of items as well as the text that the user has entered. Although event handlers appear to be rendered inline, they will be collected and implemented using event delegation.
+ఒక చిన్న Todo అప్లికేషన్ `props` and `state` తో తయారుచేద్దం. ఈ ఉదాహరణ యూసర్ నమోదు చేసిన టెక్స్ట్ ను మరియు ప్రస్తుత చేస్తున్న పనులను `state` ఉపయోగించి ట్రాక్ చేస్తుంది. ఈవెంట్ హ్యాండ్లర్లు ను html లో వాదినట్లు కనిపిస్తున్నప్పటికీ, అవి లోపల ఈవెంట్ డెలిగేషన్ ద్వారా మెకానిజమ్ అమలు చేయబడతాయి.

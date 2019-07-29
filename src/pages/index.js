@@ -5,19 +5,19 @@
  */
 
 import ButtonLink from 'components/ButtonLink';
+import CodeExample from 'components/CodeExample';
 import Container from 'components/Container';
 import Flex from 'components/Flex';
-import CodeExample from 'components/CodeExample';
-import PropTypes from 'prop-types';
-import React, {Component} from 'react';
-import {graphql} from 'gatsby';
-import TitleAndMetaTags from 'components/TitleAndMetaTags';
 import Layout from 'components/Layout';
-import {colors, media, sharedStyles} from 'theme';
-import loadScript from 'utils/loadScript';
-import createCanonicalUrl from 'utils/createCanonicalUrl';
-import {babelURL} from 'site-constants';
+import TitleAndMetaTags from 'components/TitleAndMetaTags';
+import { graphql } from 'gatsby';
 import logoWhiteSvg from 'icons/logo-white.svg';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import { babelURL } from 'site-constants';
+import { colors, media, sharedStyles } from 'theme';
+import createCanonicalUrl from 'utils/createCanonicalUrl';
+import loadScript from 'utils/loadScript';
 
 class Home extends Component {
   state = {
@@ -133,7 +133,7 @@ class Home extends Component {
                         fontSize: 30,
                       },
                     }}>
-                    A JavaScript library for building user interfaces
+                    వినియోగదారు ఇంటర్‌ఫేస్‌లను రూపొందించుటకు ఓక జావాస్క్రిప్ట్ లైబ్రరీ
                   </p>
                   <Flex
                     valign="center"
@@ -151,12 +151,12 @@ class Home extends Component {
                       <ButtonLink
                         to="/docs/getting-started.html"
                         type="primary">
-                        Get Started
+                        ప్రారంభించడానికి
                       </ButtonLink>
                     </CtaItem>
                     <CtaItem>
                       <ButtonLink to="/tutorial/tutorial.html" type="secondary">
-                        Take the Tutorial
+                       ట్యుటోరియల్ తీసుకోండి
                       </ButtonLink>
                     </CtaItem>
                   </Flex>
@@ -294,12 +294,12 @@ class Home extends Component {
                 }}>
                 <CtaItem>
                   <ButtonLink to="/docs/getting-started.html" type="primary">
-                    Get Started
+                    ప్రారంభించడానికి
                   </ButtonLink>
                 </CtaItem>
                 <CtaItem>
                   <ButtonLink to="/tutorial/tutorial.html" type="secondary">
-                    Take the Tutorial
+                    ట్యుటోరియల్ తీసుకోండి
                   </ButtonLink>
                 </CtaItem>
               </Flex>

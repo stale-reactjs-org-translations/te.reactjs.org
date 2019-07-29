@@ -1,8 +1,8 @@
 ---
-title: Component-Based
+title: కాంపోనెంట్-ఆధారిత
 order: 1
 ---
 
-Build encapsulated components that manage their own state, then compose them to make complex UIs.
+కాంపోనెంట్స్ ని వాటి స్వంత స్టేట్ ని ఆధారపడేలా రూపొందించండి, ఆపై సంక్లిష్టమైన UI లను తయారు చేయడానికి వాటిని కంపోజ్ చేయండి.
 
-Since component logic is written in JavaScript instead of templates, you can easily pass rich data through your app and keep state out of the DOM.
+కాంపోనెంట్ లాజిక్‌ ని టెంప్లేట్లు కాకుండ జావాస్క్రిప్ట్ లో రాయడం వలన, సులభం గా రిచ్ డేట ని మీరు అప్లికేషన్‌ కి అందించ గలరు మరియు కాంపోనెంట్ స్టేట్ ని DOM నుండి వేరు చేయగలం
