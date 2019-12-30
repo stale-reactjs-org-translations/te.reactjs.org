@@ -1,7 +1,7 @@
 ---
-title: A Component Using External Plugins
+title: బాహ్య ప్లగిన్లు ఉపయోగించి ఒక కంపోనెంట్
 order: 3
 domid: markdown-example
 ---
 
-React allows you to interface with other libraries and frameworks. This example uses **remarkable**, an external Markdown library, to convert the `<textarea>`'s value in real time.
+రియాక్ట్ ఇతర ఫ్రేంవర్క్ తో మరియు లైబ్రరీలతొ సమన్వయము కల్గించును. ఈ ఉదాహరణ **remarkable**, మార్క్ డౌన్ లైబ్రరీని ఉపయోగిస్తుంది, నిజ సమయంలో `<textarea>` విలువను మార్చడానికి.
