@@ -12,7 +12,11 @@ redirect_from:
 
 ఈ పేజీలో మీరు భాగమయ్యే కొన్ని రియాక్ట్-సంబంధిత సంఘాలను మేము జాబితా చేసాము; అదనపు ఆన్‌లైన్ మరియు వ్యక్తి అభ్యాస సామగ్రి కోసం ఈ విభాగంలోని ఇతర పేజీలను చూడండి.
 
+<<<<<<< HEAD
 రియాక్ట్ సంఘాల్లో పాల్గొనే ముందు, [దయచేసి మా ప్రవర్తనా నియమావళిని చదవండి](https://github.com/facebook/react/blob/master/CODE_OF_CONDUCT.md). మేము దత్తత తీసుకున్నాము [సహకారి ఒడంబడిక](https://www.contributor-covenant.org/) మరియు సంఘ సభ్యులందరూ మార్గదర్శకాలకు కట్టుబడి ఉంటారని మేము ఆశిస్తున్నాము.
+=======
+Before participating in React's communities, [please read our Code of Conduct](https://github.com/facebook/react/blob/main/CODE_OF_CONDUCT.md). We have adopted the [Contributor Covenant](https://www.contributor-covenant.org/) and we expect that all community members adhere to the guidelines within.
+>>>>>>> 95e15d063b205007a92c52efb5311f76ad5a0b6c
 
 ## స్టాక్ ఓవర్ఫ్లో{#stack-overflow}
 
