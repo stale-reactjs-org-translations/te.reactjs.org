@@ -12,7 +12,11 @@ redirect_from:
 
 ఈ పేజీలో మీరు భాగమయ్యే కొన్ని రియాక్ట్-సంబంధిత సంఘాలను మేము జాబితా చేసాము; అదనపు ఆన్‌లైన్ మరియు వ్యక్తి అభ్యాస సామగ్రి కోసం ఈ విభాగంలోని ఇతర పేజీలను చూడండి.
 
+<<<<<<< HEAD
 రియాక్ట్ సంఘాల్లో పాల్గొనే ముందు, [దయచేసి మా ప్రవర్తనా నియమావళిని చదవండి](https://github.com/facebook/react/blob/master/CODE_OF_CONDUCT.md). మేము దత్తత తీసుకున్నాము [సహకారి ఒడంబడిక](https://www.contributor-covenant.org/) మరియు సంఘ సభ్యులందరూ మార్గదర్శకాలకు కట్టుబడి ఉంటారని మేము ఆశిస్తున్నాము.
+=======
+Before participating in React's communities, [please read our Code of Conduct](https://github.com/facebook/react/blob/main/CODE_OF_CONDUCT.md). We have adopted the [Contributor Covenant](https://www.contributor-covenant.org/) and we expect that all community members adhere to the guidelines within.
+>>>>>>> 4133943e718a77f11627888db2f59f6cb7a73403
 
 ## స్టాక్ ఓవర్ఫ్లో{#stack-overflow}
 
@@ -24,11 +28,18 @@ redirect_from:
 
 ప్రతి సంఘంలో అనేక వేల మంది రియాక్ట్ వినియోగదారులు ఉంటారు.
 
+<<<<<<< HEAD
 * [డెవలపర్ యొక్క ప్రతిచర్య సంఘం](https://dev.to/t/react)
 * [హాష్నోడ్ యొక్క ప్రతిచర్య సంఘం](https://hashnode.com/n/reactjs)
 * [రియాక్టిఫ్లక్స్ ఆన్‌లైన్ చాట్](https://discord.gg/reactiflux)
 * [రెడ్డిట్ రియాక్ట్ కమ్యూనిటీ](https://www.reddit.com/r/reactjs/)
 * [స్పెక్ట్రమ్ యొక్క ప్రతిచర్య సంఘం](https://spectrum.chat/react)
+=======
+* [DEV's React community](https://dev.to/t/react)
+* [Hashnode's React community](https://hashnode.com/n/reactjs)
+* [Reactiflux online chat](https://discord.gg/reactiflux)
+* [Reddit's React community](https://www.reddit.com/r/reactjs/)
+>>>>>>> 4133943e718a77f11627888db2f59f6cb7a73403
 
 ## న్యూస్ {#news}
 
